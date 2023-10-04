@@ -16,3 +16,10 @@ model Tracking {
   tanggal DateTime 
   status String
 }
+ 
+model Rates {
+  id Int @id @default(autoincrement())
+  origin String
+  destination String 
+  Berat String
+}
