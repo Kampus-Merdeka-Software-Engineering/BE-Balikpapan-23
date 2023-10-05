@@ -12,6 +12,22 @@ async function getAllStatus() {
   }
 }
 
+async function getStatus(noResi) {
+  try {
+    const status = await prisma.tracking.findFirst({
+      where: {
+          no_resi: noResi
+      }
+  })
+   
+    return status;
+  } catch (error) {
+    console.error(error);
+
+    throw new Error()
+  }
+}
+
 module.exports = {
-  getAllStatus
+  getStatus
 };
