@@ -2,7 +2,7 @@ const { prisma } = require('../config/prisma');
 
 async function getAllStatus() {
   try {
-    const status = await prisma.status.findMany();
+    const status = await prisma.book.findMany();
 
     return status;
   } catch (error) {

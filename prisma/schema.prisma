@@ -16,10 +16,10 @@ model Tracking {
   tanggal DateTime 
   status String
 }
- 
-model Rates {
+
+model Tarif {
   id Int @id @default(autoincrement())
   origin String
   destination String 
-  Berat String
+  price Int
 }
