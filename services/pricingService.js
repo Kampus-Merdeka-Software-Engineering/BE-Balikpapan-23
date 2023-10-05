@@ -1,16 +1,18 @@
-const { pool } = require('../config/database');
 const { prisma } = require('../config/prisma');
 
 const createPricing = async (pricing) => {
   try {
-    const createdPricing = await connection.query('INSERT INTO pricing (origin, destination, weight) VALUES (?, ?, ?)',
-    [pricing.origin, pricing.destination, pricing.weight]);
-    return createdPricing;
+    const pricingData = await prisma.pricing.create({
+      data: {
+        origin      :pricing.origin,
+        destination :pricing.destination,
+        weight      :pricing.weight,
+      }
+    })
+    return pricingData;
   } catch (error) {
     return error
-  } finally {
-    connection.release()
-  }
+  } 
 }
 
 const getPricing = async () => {
@@ -24,4 +26,7 @@ const getPricing = async () => {
   } 
 }
 
-module.exports = { getPricing, createPricing }
+module.exports = { 
+  createPricing,
+  getPricing
+};

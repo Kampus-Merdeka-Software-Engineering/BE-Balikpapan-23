@@ -11,7 +11,7 @@ datasource db {
 }
 
 model tracking {
-  id_receipt         String   @id 
+  id_receipt         String   @id @unique
   sender_name        String   
   sender_address     String
   recipient_name     String   
@@ -20,7 +20,7 @@ model tracking {
 }
 
 model pricing {
-  id_pricing         Int      @id @default(autoincrement())
+  id_pricing         Int      @id @unique @default(autoincrement())
   origin             String   
   destination        String
   weight             Int
