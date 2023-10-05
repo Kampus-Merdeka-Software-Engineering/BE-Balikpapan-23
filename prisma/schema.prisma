@@ -13,7 +13,10 @@ datasource db {
 model Tracking {
   id Int @id @default(autoincrement())
   no_resi String
-  tanggal DateTime 
+  asal String
+  tujuan String 
+  nama_pengirim String
+  nama_penerima String
   status String
 }
 
@@ -22,4 +25,12 @@ model Tarif {
   origin String
   destination String 
   price Int
+}
+
+model Message {
+  id Int @id @default(autoincrement())
+  full_name String
+  email String 
+  subject String
+  message String
 }
