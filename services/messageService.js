@@ -1,3 +1,5 @@
+const { prisma } = require('../config/prisma');
+
 async function createMessage(message) {
     try {
       const mappedMessage = {

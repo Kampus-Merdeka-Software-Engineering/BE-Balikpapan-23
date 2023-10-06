@@ -6,7 +6,7 @@ async function createMessage(req, res) {
   // const subject = req.body.subject;
   // const message = req.body.message;
   const Message = req.body;
-
+  console.log (Message)
 
   const createdMessage = await messageService.createMessage(Message);
 
