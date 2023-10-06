@@ -1,4 +1,4 @@
-async function createMessage(book) {
+async function createMessage(message) {
     try {
       const mappedMessage = {
         data: {
@@ -18,4 +18,6 @@ async function createMessage(book) {
       throw new Error()
     }
   }
-  
+module.exports = {
+  createMessage
+};

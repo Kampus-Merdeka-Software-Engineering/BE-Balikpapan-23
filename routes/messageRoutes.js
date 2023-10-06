@@ -5,5 +5,4 @@ const router = express.Router();
 router.post('/message', messageController.createMessage);
 
 
-
 module.exports = router;
