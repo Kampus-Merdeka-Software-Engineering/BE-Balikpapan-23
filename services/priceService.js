@@ -1,12 +1,12 @@
 const { prisma } = require('../config/prisma');
 
-async function getPrice(origin, destination, weight) {
+async function getPrice(asal, tujuan, weight) {
   try {
     const basePrice = await prisma.tarif.findFirst({
         where: {
             AND: [
-                { origin: origin },
-                { destination: destination },
+                { origin: asal },
+                { destination: tujuan },
             ]
         }
     })
