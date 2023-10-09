@@ -2,7 +2,7 @@ const express = require('express');
 const { statusController } = require('../controllers');
 const router = express.Router();
 
-// get all status
+// get status
 router.get('/status/:noResi', statusController.getStatus);
 
 
