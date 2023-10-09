@@ -2,7 +2,6 @@ const { messageService } = require('../services');
 
 async function createMessage(req, res) {
   const Message = req.body;
-  console.log (Message)
 
   const createdMessage = await messageService.createMessage(Message);
 
