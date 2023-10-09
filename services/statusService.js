@@ -21,6 +21,7 @@ async function getStatus(noResi) {
   })
    
     return status;
+    
   } catch (error) {
     console.error(error);
 
